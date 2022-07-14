@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,11 @@ Route::get('/products/show/{product}', [ProductController::class, 'show']);
 Route::get('/products/edit/{product}', [ProductController::class, 'edit']);
 Route::post('/products/update/{product}', [ProductController::class, 'update']);
 Route::post('/products/delete/{product}', [ProductController::class, 'delete']);
+
+Route::get('/places', [PlaceController::class, 'index']);
+Route::get('/places/create', [PlaceController::class, 'create']);//mostrar
+Route::post('/places/store', [PlaceController::class, 'store']);
+Route::get('/places/show/{id}', [PlaceController::class, 'show']);
+Route::get('/places/edit/{id}', [PlaceController::class, 'edit']);
+Route::post('/places/update/{id}', [PlaceController::class, 'update']);
+Route::get('/places/delete/{id}', [PlaceController::class, 'destroy']);
